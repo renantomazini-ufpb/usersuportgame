@@ -1,51 +1,56 @@
-extends Area2D
+extends CharacterBody2D 
 
-@export var speed = 50
+@export var speed = 300 
 var screen_size
 signal pontua
 var ultima_direcao = 'cima'
+@export var push_force = 100.0 # Força para empurrar
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AnimatedSprite2D.animation = "parado_cima"
 	$AnimatedSprite2D.play()
 	screen_size = get_viewport_rect().size
 
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	var velocity = Vector2()
+func _physics_process(delta: float) -> void: # 2. Usamos physics_process para física
+	var input_dir = Vector2.ZERO
 	if Input.is_action_pressed("ui_down"):
-		velocity.y += 1
+		input_dir.y += 1
 	elif Input.is_action_pressed("ui_up"):
-		velocity.y -= 1
+		input_dir.y -= 1
 	elif Input.is_action_pressed("ui_left"):
-		velocity.x -= 1
+		input_dir.x -= 1
 	elif Input.is_action_pressed("ui_right"):
-		velocity.x += 1
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
+		input_dir.x += 1
+
+	# 3. Em vez de position, alimentamos a variável nativa 'velocity'
+	if input_dir.length() > 0:
+		velocity = input_dir.normalized() * speed
 		$AnimatedSprite2D.play()
 	else:
-		if ultima_direcao == 'cima':
-			$AnimatedSprite2D.animation = "parado_cima"
-		if ultima_direcao == 'baixo':
-			$AnimatedSprite2D.animation = "parado_baixo"
-		if ultima_direcao == 'esquerda':
-			$AnimatedSprite2D.animation = "parado_esquerda"
-		if ultima_direcao == 'direita':
-			$AnimatedSprite2D.animation = "parado_direita"
-	position += velocity*delta
-	position.x = clamp(position.x,0,screen_size.x)
-	position.y = clamp(position.y,0,screen_size.y)
-	if velocity.y > 0:
-		$AnimatedSprite2D.animation = "baixo"
-	elif velocity.y < 0:
-		$AnimatedSprite2D.animation = "cima"
-	if velocity.x > 0:
-		$AnimatedSprite2D.animation = "direita"
-	elif velocity.x < 0:
-		$AnimatedSprite2D.animation = "esquerda"
+		velocity = Vector2.ZERO # Para o player se não houver input
+		# ... (sua lógica de animação parado continua igual)
+		if ultima_direcao == 'cima': $AnimatedSprite2D.animation = "parado_cima"
+		if ultima_direcao == 'baixo': $AnimatedSprite2D.animation = "parado_baixo"
+		if ultima_direcao == 'esquerda': $AnimatedSprite2D.animation = "parado_esquerda"
+		if ultima_direcao == 'direita': $AnimatedSprite2D.animation = "parado_direita"
+
+	# 4. A MÁGICA: move_and_slide resolve colisões e o movimento
+	move_and_slide()
+	
+	# 5. Lógica para empurrar objetos (RigidBody2D)
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider() is RigidBody2D:
+			collision.get_collider().apply_central_impulse(collision.get_normal() * -push_force)
+
+	# Suas animações continuam iguais...
+	if velocity.y > 0: $AnimatedSprite2D.animation = "baixo"
+	elif velocity.y < 0: $AnimatedSprite2D.animation = "cima"
+	if velocity.x > 0: $AnimatedSprite2D.animation = "direita"
+	elif velocity.x < 0: $AnimatedSprite2D.animation = "esquerda"
+	
 	ultima_direcao = $AnimatedSprite2D.get_animation()
 	
+	# Clamp para não sair da tela (opcional, já que agora você terá paredes)
+	global_position.x = clamp(global_position.x, 0, screen_size.x)
+	global_position.y = clamp(global_position.y, 0, screen_size.y)
