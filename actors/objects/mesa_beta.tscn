@@ -29,3 +29,11 @@ vframes = 2
 [node name="Computer" parent="." instance=ExtResource("2_5072c")]
 z_index = 2
 position = Vector2(1, -6)
+
+[node name="Desk3" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.41568628)
+z_index = -1
+position = Vector2(0, 11.5)
+scale = Vector2(1, 0.9375)
+texture = ExtResource("1_hgbv4")
+vframes = 2

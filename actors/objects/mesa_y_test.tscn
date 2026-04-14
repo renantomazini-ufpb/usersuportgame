@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cylllkm6tnjjq"]
+
+[ext_resource type="Texture2D" uid="uid://dge0d01a1swn0" path="res://sprites/objects/free-office-pixel-art/desk.png" id="1_uo7yt"]
+[ext_resource type="PackedScene" uid="uid://dk48mny3a5gst" path="res://actors/objects/computer.tscn" id="2_8grp2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8grp2"]
+size = Vector2(37.5, 17)
+
+[node name="MesaYTest" type="RigidBody2D"]
+z_as_relative = false
+gravity_scale = 0.0
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.25, 0)
+shape = SubResource("RectangleShape2D_8grp2")
+
+[node name="Desk" type="Sprite2D" parent="."]
+z_as_relative = false
+texture = ExtResource("1_uo7yt")
+
+[node name="Computer" parent="." instance=ExtResource("2_8grp2")]
+position = Vector2(-3, -7)
