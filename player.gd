@@ -13,13 +13,13 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void: # 2. Usamos physics_process para física
 	var input_dir = Vector2.ZERO
-	if Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("baixo"):
 		input_dir.y += 1
-	elif Input.is_action_pressed("ui_up"):
+	elif Input.is_action_pressed("cima"):
 		input_dir.y -= 1
-	elif Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("esquerda"):
 		input_dir.x -= 1
-	elif Input.is_action_pressed("ui_right"):
+	elif Input.is_action_pressed("direita"):
 		input_dir.x += 1
 
 	# 3. Em vez de position, alimentamos a variável nativa 'velocity'
@@ -54,3 +54,11 @@ func _physics_process(delta: float) -> void: # 2. Usamos physics_process para f�
 	# Clamp para não sair da tela (opcional, já que agora você terá paredes)
 	global_position.x = clamp(global_position.x, 0, screen_size.x)
 	global_position.y = clamp(global_position.y, 0, screen_size.y)
+	
+	teste_usar()
+	
+func teste_usar():
+	if Input.is_action_just_pressed("usar"):
+		print("usando, né?")
+	if Input.is_action_just_released("usar"):
+		print("parou")
