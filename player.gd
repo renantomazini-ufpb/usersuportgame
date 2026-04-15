@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed = 300 
 var screen_size
 signal pontua
+signal usar
 var ultima_direcao = 'cima'
 @export var push_force = 100.0 # Força para empurrar
 
@@ -11,7 +12,7 @@ func _ready() -> void:
 	$AnimatedSprite2D.play()
 	screen_size = get_viewport_rect().size
 
-func _physics_process(delta: float) -> void: # 2. Usamos physics_process para física
+func _physics_process(delta: float) -> void: #  Usamos physics_process para física
 	var input_dir = Vector2.ZERO
 	if Input.is_action_pressed("baixo"):
 		input_dir.y += 1
@@ -22,7 +23,7 @@ func _physics_process(delta: float) -> void: # 2. Usamos physics_process para f�
 	elif Input.is_action_pressed("direita"):
 		input_dir.x += 1
 
-	# 3. Em vez de position, alimentamos a variável nativa 'velocity'
+
 	if input_dir.length() > 0:
 		velocity = input_dir.normalized() * speed
 		$AnimatedSprite2D.play()
@@ -33,17 +34,16 @@ func _physics_process(delta: float) -> void: # 2. Usamos physics_process para f�
 		if ultima_direcao == 'baixo': $AnimatedSprite2D.animation = "parado_baixo"
 		if ultima_direcao == 'esquerda': $AnimatedSprite2D.animation = "parado_esquerda"
 		if ultima_direcao == 'direita': $AnimatedSprite2D.animation = "parado_direita"
-
-	# 4. A MÁGICA: move_and_slide resolve colisões e o movimento
+		
 	move_and_slide()
 	
-	# 5. Lógica para empurrar objetos (RigidBody2D)
+
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		if collision.get_collider() is RigidBody2D:
 			collision.get_collider().apply_central_impulse(collision.get_normal() * -push_force)
 
-	# Suas animações continuam iguais...
+
 	if velocity.y > 0: $AnimatedSprite2D.animation = "baixo"
 	elif velocity.y < 0: $AnimatedSprite2D.animation = "cima"
 	if velocity.x > 0: $AnimatedSprite2D.animation = "direita"
@@ -51,7 +51,7 @@ func _physics_process(delta: float) -> void: # 2. Usamos physics_process para f�
 	
 	ultima_direcao = $AnimatedSprite2D.get_animation()
 	
-	# Clamp para não sair da tela (opcional, já que agora você terá paredes)
+	# clamp para não sair da tela
 	global_position.x = clamp(global_position.x, 0, screen_size.x)
 	global_position.y = clamp(global_position.y, 0, screen_size.y)
 	
@@ -59,6 +59,6 @@ func _physics_process(delta: float) -> void: # 2. Usamos physics_process para f�
 	
 func teste_usar():
 	if Input.is_action_just_pressed("usar"):
-		print("usando, né?")
-	if Input.is_action_just_released("usar"):
-		print("parou")
+		print("usando")
+		emit_signal("usar")
+		
