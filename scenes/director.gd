@@ -16,21 +16,18 @@ func _ready() -> void:
 
 	
 func _process(delta: float) -> void:
-	player.usar.connect(teste)
+	#player.usar.connect(teste)
+	pass
 	
 func _on_computador_pronto():
 	com_pro = com_pro + 1
 	print(str(com_pro) + '/' + str(num_comp))
 	if com_pro == num_comp:
 		ganhou = true
+		print("ganhou!")
 		# trocar para tela de ganho e ir para próxima
 
 	
-func teste():
-	print("testando o conectado de conserto")
-	
-func teste2():
-	print("teste 2 de conect2")
 
 
 func _on_player_usar():
@@ -39,4 +36,5 @@ func _on_player_usar():
 
 
 func _on_computer_area_entered(area: Area2D) -> void:
-	player.usar.connect(teste)
+	#player.usar.connect(teste)
+	pass
