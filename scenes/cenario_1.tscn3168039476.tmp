@@ -72,3 +72,4 @@ position = Vector2(162, 95)
 
 [connection signal="usar" from="director/objetos/player" to="director" method="_on_player_usar"]
 [connection signal="area_entered" from="director/objetos/Computer" to="director" method="_on_computer_area_entered"]
+[connection signal="pronto" from="director/objetos/Computer" to="director" method="_on_computer_pronto"]

@@ -1,12 +1,15 @@
 extends Area2D
 
-@export var usando = false
-
+#@export var usando = false
+signal pronto
+var player_na_area = false
+var terminado = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_to_group("computadores")
 	$Timer.wait_time = 5.0
-	$ProgressBar.max_value = $Timer.wait_time # A barra agora vai de 0 a 5
+	$ProgressBar.max_value = $Timer.wait_time
 	$ProgressBar.value = 0
 
 
@@ -18,22 +21,33 @@ func _process(delta: float) -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
-	print("Entrou")
+	print("Entrou " + String(self.name))
 	$Pc1.visible = true
 	$Pc2.visible = false
-	if usando and $Timer.is_stopped():
-		$ProgressBar.set_visible(true)
-		$Timer.start()
-		print("Timer iniciado!")
+	player_na_area = true
+
 
 
 func _on_area_exited(area: Area2D) -> void:
 	print("Saiu") # Replace with function body.
-	$Pc1.visible = false
-	$Pc2.visible = true
+	if !terminado:
+		player_na_area = false
+		$Pc1.visible = false
+		$Pc2.visible = true
+		$ProgressBar.set_visible(false)
+		$Timer.stop()
+		$Timer.set_wait_time(5.0)
 	$ProgressBar.set_visible(false)
-	$Timer.stop()
-	$Timer.set_wait_time(5.0)
 
 func _on_timer_timeout():
-	print("Pronto!!!!")
+	terminado = true
+	emit_signal("pronto")
+
+
+		
+func usando():
+	print("teste importante")
+	if player_na_area and !terminado:
+		print("teste passado!")
+		$ProgressBar.set_visible(true)
+		$Timer.start()
