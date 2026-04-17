@@ -17,7 +17,7 @@ func _ready():
 func _process(delta: float) -> void:
 	if not $Timer.is_stopped():
 		$ProgressBar.value = $Timer.wait_time - $Timer.time_left
-		print("Tempo restante: ", snapped($Timer.time_left, 0.1))
+		print("Tempo restante: ", snapped($Timer.time_left, 0.1)) # vai atualizar o timeleft?
 
 
 func _on_area_entered(area: Area2D) -> void:

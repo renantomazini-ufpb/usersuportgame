@@ -1,12 +1,12 @@
-[gd_scene format=4 uid="uid://1t6jv4k440n"]
+[gd_scene format=4 uid="uid://crn3piwduq757"]
 
-[ext_resource type="Texture2D" uid="uid://w4xs78fepqiu" path="res://sprites/objects/Little_Bits_Office_Floors.png" id="1_1qck2"]
-[ext_resource type="Script" uid="uid://b582a140182ad" path="res://scripts/director.gd" id="2_spgdd"]
-[ext_resource type="PackedScene" uid="uid://cylllkm6tnjjq" path="res://actors/objects/mesa_y_test.tscn" id="3_1qck2"]
-[ext_resource type="PackedScene" uid="uid://bd6dh2yjyyrvm" path="res://actors/char/player.tscn" id="3_jivmu"]
+[ext_resource type="Texture2D" uid="uid://w4xs78fepqiu" path="res://sprites/objects/Little_Bits_Office_Floors.png" id="1_glx0c"]
+[ext_resource type="Script" uid="uid://b582a140182ad" path="res://scripts/director.gd" id="2_hki3o"]
+[ext_resource type="PackedScene" uid="uid://bd6dh2yjyyrvm" path="res://actors/char/player.tscn" id="3_h5dnj"]
+[ext_resource type="PackedScene" uid="uid://cylllkm6tnjjq" path="res://actors/objects/mesa_y_test.tscn" id="4_3t8bn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_if0g2"]
-texture = ExtResource("1_1qck2")
+texture = ExtResource("1_glx0c")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -47,20 +47,23 @@ tile_map_data = PackedByteArray("AAAAAAcAAAAFAAEAAAAAAAgAAAAFAAIAAAAAAAkAAAAFAAA
 tile_set = SubResource("TileSet_tvifx")
 
 [node name="director" type="Node" parent="." unique_id=1997486403]
-script = ExtResource("2_spgdd")
+script = ExtResource("2_hki3o")
 
 [node name="objetos" type="Node2D" parent="director" unique_id=1359082291]
 z_as_relative = false
 y_sort_enabled = true
 
-[node name="player" parent="director/objetos" unique_id=762978970 instance=ExtResource("3_jivmu")]
+[node name="player" parent="director/objetos" unique_id=762978970 instance=ExtResource("3_h5dnj")]
 y_sort_enabled = true
 position = Vector2(99, 110)
 disable_mode = 2
 safe_margin = 0.001
 push_force = 100.0
 
-[node name="MesaYTest" parent="director/objetos" unique_id=35312434 instance=ExtResource("3_1qck2")]
-position = Vector2(49, 101)
+[node name="MesaYTest" parent="director/objetos" unique_id=35312434 instance=ExtResource("4_3t8bn")]
+position = Vector2(38, 129)
+
+[node name="MesaYTest2" parent="director/objetos" unique_id=2130980130 instance=ExtResource("4_3t8bn")]
+position = Vector2(163, 125)
 
 [connection signal="usar" from="director/objetos/player" to="director" method="_on_player_usar"]

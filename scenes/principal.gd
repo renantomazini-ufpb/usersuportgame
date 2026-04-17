@@ -21,9 +21,20 @@ func _process(delta: float) -> void:
 	pass
 	
 func _on_ganhar():
+	if ganhou: return 
+	ganhou = true
 	for n in get_children():
-		n.queue_free() 
+		n.queue_free()
+	await get_tree().process_frame
+	set_process(false) 
 	fase += 1
-	var nova_fase = load("res://scenes/cenario_" + str(fase) + ".tscn").instantiate()
-	add_child(nova_fase)
-	nova_fase.get_node("director").ganhar.connect(_on_ganhar)
+	var caminho = "res://scenes/cenario_" + str(fase) + ".tscn"
+	if FileAccess.file_exists(caminho):
+		var nova_cena = load(caminho).instantiate()
+		#get_tree().change_scene_to_file(caminho)
+		add_child(nova_cena)
+		var novo_director = nova_cena.get_node("director")
+		novo_director.ganhar.connect(_on_ganhar)
+		ganhou = false
+	else:
+		print("Sem novas fases")

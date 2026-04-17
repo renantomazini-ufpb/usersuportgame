@@ -35,8 +35,10 @@ func _on_computador_pronto():
 
 func _on_player_usar():
 	for c in computadores:
-		c.usando()
-
+		if is_instance_valid(c):
+			c.usando()
+		else:
+			computadores.erase(c)
 
 func _on_computer_area_entered(area: Area2D) -> void:
 	#player.usar.connect(teste)
