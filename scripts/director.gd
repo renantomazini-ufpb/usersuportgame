@@ -7,9 +7,11 @@ extends Node
 var num_comp
 var com_pro = 0
 var ganhou = false
+signal ganhar
 
 func _ready() -> void:
-	player.usar.connect(_on_player_usar)
+	if not player.usar.is_connected(_on_player_usar):
+		player.usar.connect(_on_player_usar)
 	num_comp = len(computadores)
 	for c in computadores:
 		c.pronto.connect(_on_computador_pronto)
@@ -24,6 +26,7 @@ func _on_computador_pronto():
 	print(str(com_pro) + '/' + str(num_comp))
 	if com_pro == num_comp:
 		ganhou = true
+		ganhar.emit()
 		print("ganhou!")
 		# trocar para tela de ganho e ir para próxima
 
