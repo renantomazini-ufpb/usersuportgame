@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://e3wx105v61w2" path="res://sprites/objects/free-office-pixel-art/desk-with-pc.png" id="3_mneyp"]
 [ext_resource type="Texture2D" uid="uid://dtf4c6omvlm3n" path="res://sprites/objects/free-office-pixel-art/printer.png" id="4_7osv0"]
 [ext_resource type="Texture2D" uid="uid://bft5fsr6p400r" path="res://sprites/objects/free-office-pixel-art/coffee-maker.png" id="5_ojehi"]
+[ext_resource type="AudioStream" uid="uid://c85qq5gqiwsus" path="res://audio/Music/1 Minigame Karting.wav" id="7_ojehi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qph4u"]
 atlas = ExtResource("1_qph4u")
@@ -145,6 +146,11 @@ offset_top = 128.0
 offset_right = 194.0
 offset_bottom = 144.0
 text = "Suporte CompeTItivo"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1248472990]
+stream = ExtResource("7_ojehi")
+volume_db = -15.797
+autoplay = true
 
 [connection signal="pressed" from="Button_PLAY" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="Button_SOBRE" to="." method="_on_button_sobre_pressed"]
