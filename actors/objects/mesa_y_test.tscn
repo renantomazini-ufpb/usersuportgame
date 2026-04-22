@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dk48mny3a5gst" path="res://actors/objects/computer.tscn" id="2_8grp2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8grp2"]
-size = Vector2(37.5, 17)
+size = Vector2(37.5, 16.5)
 
 [node name="MesaYTest" type="RigidBody2D" unique_id=35312434]
 z_as_relative = false
@@ -13,7 +13,7 @@ gravity_scale = 0.0
 freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=505937924]
-position = Vector2(0.25, 0)
+position = Vector2(0.25, -0.25)
 shape = SubResource("RectangleShape2D_8grp2")
 
 [node name="Desk" type="Sprite2D" parent="." unique_id=1790126589]

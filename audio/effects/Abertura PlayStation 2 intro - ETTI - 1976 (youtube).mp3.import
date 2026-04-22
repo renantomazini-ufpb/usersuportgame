@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bp8o8tgwhvw2o"
+path="res://.godot/imported/Abertura PlayStation 2 intro - ETTI - 1976 (youtube).mp3-e7d2f31818528c672fa5019394e838f4.mp3str"
+
+[deps]
+
+source_file="res://audio/effects/Abertura PlayStation 2 intro - ETTI - 1976 (youtube).mp3"
+dest_files=["res://.godot/imported/Abertura PlayStation 2 intro - ETTI - 1976 (youtube).mp3-e7d2f31818528c672fa5019394e838f4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

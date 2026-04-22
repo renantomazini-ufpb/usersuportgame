@@ -1,0 +1,114 @@
+[gd_scene format=4 uid="uid://bcxymb4m0mmfd"]
+
+[ext_resource type="Texture2D" uid="uid://w4xs78fepqiu" path="res://sprites/objects/Little_Bits_Office_Floors.png" id="1_c8kyj"]
+[ext_resource type="Script" uid="uid://b582a140182ad" path="res://scripts/director.gd" id="2_tskav"]
+[ext_resource type="PackedScene" uid="uid://bd6dh2yjyyrvm" path="res://actors/char/player.tscn" id="3_ic470"]
+[ext_resource type="PackedScene" uid="uid://cylllkm6tnjjq" path="res://actors/objects/mesa_y_test.tscn" id="4_ygm18"]
+[ext_resource type="PackedScene" uid="uid://cv8t2gi5poupp" path="res://actors/objects/plant.tscn" id="5_k30xk"]
+[ext_resource type="PackedScene" uid="uid://bmyxjq2rd04wd" path="res://actors/objects/trash.tscn" id="6_yqcqi"]
+[ext_resource type="PackedScene" uid="uid://c02nweatqsqml" path="res://actors/objects/coffe_desk.tscn" id="7_hsq6h"]
+[ext_resource type="PackedScene" uid="uid://bi3iuj0mw0rog" path="res://actors/objects/parede2.tscn" id="8_1h0ju"]
+[ext_resource type="PackedScene" uid="uid://bcgaeqhxepx6f" path="res://actors/objects/impressora.tscn" id="10_meiv8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_if0g2"]
+texture = ExtResource("1_c8kyj")
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tvifx"]
+sources/0 = SubResource("TileSetAtlasSource_if0g2")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spgdd"]
+size = Vector2(253.5, 30)
+
+[node name="cenario_1" type="Node2D" unique_id=745251647]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=822496643]
+tile_map_data = PackedByteArray("AAAAAAcAAAAFAAAAAAAAAAgAAAAFAAEAAAAAAAkAAAAFAAIAAAABAAcAAAAGAAAAAAABAAgAAAAGAAEAAAABAAkAAAAGAAIAAAACAAcAAAAFAAAAAAACAAgAAAAFAAEAAAACAAkAAAAFAAIAAAADAAcAAAAGAAAAAAADAAgAAAAGAAEAAAADAAkAAAAGAAIAAAAEAAcAAAAFAAAAAAAEAAgAAAAFAAEAAAAEAAkAAAAFAAIAAAAFAAcAAAAGAAAAAAAFAAgAAAAGAAEAAAAFAAkAAAAGAAIAAAAGAAcAAAAFAAAAAAAGAAgAAAAFAAEAAAAGAAkAAAAFAAIAAAAHAAcAAAAGAAAAAAAHAAgAAAAGAAEAAAAHAAkAAAAGAAIAAAAIAAcAAAADAAAAAAAIAAgAAAADAAEAAAAIAAkAAAADAAIAAAAJAAcAAAAEAAAAAAAJAAgAAAAEAAEAAAAJAAkAAAAEAAIAAAAKAAcAAAADAAAAAAAKAAgAAAADAAEAAAAKAAkAAAADAAIAAAALAAcAAAAEAAAAAAALAAgAAAAEAAEAAAALAAkAAAAEAAIAAAAMAAcAAAADAAAAAAAMAAgAAAADAAEAAAAMAAkAAAADAAIAAAANAAcAAAAEAAAAAAANAAgAAAAEAAEAAAANAAkAAAAEAAIAAAAOAAcAAAADAAAAAAAOAAgAAAADAAEAAAAOAAkAAAADAAIAAAAPAAcAAAAEAAAAAAAPAAgAAAAEAAEAAAAPAAkAAAAEAAIAAAAOAAQAAAADAAEAAAAOAAUAAAADAAAAAAAOAAYAAAADAAEAAAAPAAQAAAAEAAEAAAAPAAUAAAAEAAAAAAAPAAYAAAAEAAEAAAAOAAEAAAAKAAAAAAAOAAIAAAAKAAAAAAAPAAEAAAAKAAAAAAAPAAIAAAAKAAAAAAAMAAEAAAAKAAAAAAAMAAIAAAAKAAAAAAANAAEAAAAKAAAAAAANAAIAAAAKAAAAAAAKAAEAAAAKAAAAAAAKAAIAAAAKAAAAAAALAAEAAAAKAAAAAAALAAIAAAAKAAAAAAAIAAEAAAAKAAAAAAAIAAIAAAAKAAAAAAAJAAEAAAAKAAAAAAAJAAIAAAAKAAAAAAAGAAEAAAAKAAAAAAAGAAIAAAAKAAAAAAAHAAEAAAAKAAAAAAAHAAIAAAAKAAAAAAAEAAEAAAAKAAAAAAAEAAIAAAAKAAAAAAAFAAEAAAAKAAAAAAAFAAIAAAAKAAAAAAACAAEAAAAKAAAAAAACAAIAAAAKAAAAAAADAAEAAAAKAAAAAAADAAIAAAAKAAAAAAAAAAEAAAAKAAAAAAAAAAIAAAAKAAAAAAABAAEAAAAKAAAAAAABAAIAAAAKAAAAAAAAAAQAAAADAAEAAAAAAAUAAAADAAAAAAAAAAYAAAADAAEAAAABAAQAAAAEAAEAAAABAAUAAAAEAAAAAAABAAYAAAAEAAEAAAACAAQAAAADAAEAAAACAAUAAAADAAAAAAACAAYAAAADAAEAAAADAAQAAAAEAAEAAAADAAUAAAAEAAAAAAADAAYAAAAEAAEAAAAEAAQAAAADAAEAAAAEAAUAAAADAAAAAAAEAAYAAAADAAEAAAAFAAQAAAAEAAEAAAAFAAUAAAAEAAAAAAAFAAYAAAAEAAEAAAAGAAQAAAADAAEAAAAGAAUAAAADAAAAAAAGAAYAAAADAAEAAAAHAAQAAAAEAAEAAAAHAAUAAAAEAAAAAAAHAAYAAAAEAAEAAAAIAAQAAAADAAEAAAAIAAUAAAADAAAAAAAIAAYAAAADAAEAAAAJAAQAAAAEAAEAAAAJAAUAAAAEAAAAAAAJAAYAAAAEAAEAAAAKAAQAAAADAAEAAAAKAAUAAAADAAAAAAAKAAYAAAADAAEAAAALAAQAAAAEAAEAAAALAAUAAAAEAAAAAAALAAYAAAAEAAEAAAAMAAQAAAADAAEAAAAMAAUAAAADAAAAAAAMAAYAAAADAAEAAAANAAQAAAAEAAEAAAANAAUAAAAEAAAAAAANAAYAAAAEAAEAAAAOAAAAAAAKAAAAAAAPAAAAAAAKAAAAAAAMAAAAAAAKAAAAAAANAAAAAAAKAAAAAAAKAAAAAAAKAAAAAAALAAAAAAAKAAAAAAAIAAAAAAAKAAAAAAAJAAAAAAAKAAAAAAAGAAAAAAAKAAAAAAAHAAAAAAAKAAAAAAAEAAAAAAAKAAAAAAAFAAAAAAAKAAAAAAACAAAAAAAKAAAAAAADAAAAAAAKAAAAAAAAAAAAAAAKAAAAAAABAAAAAAAKAAAAAAAAAAMAAAADAAAAAAABAAMAAAAEAAAAAAACAAMAAAADAAAAAAADAAMAAAAEAAAAAAAEAAMAAAADAAAAAAAFAAMAAAAEAAAAAAAGAAMAAAADAAAAAAAHAAMAAAAEAAAAAAAIAAMAAAADAAAAAAAJAAMAAAAEAAAAAAAKAAMAAAADAAAAAAALAAMAAAAEAAAAAAAMAAMAAAADAAAAAAANAAMAAAAEAAAAAAAOAAMAAAADAAAAAAAPAAMAAAAEAAAAAAA=")
+tile_set = SubResource("TileSet_tvifx")
+
+[node name="director" type="Node" parent="." unique_id=1997486403]
+script = ExtResource("2_tskav")
+
+[node name="objetos" type="Node2D" parent="director" unique_id=1359082291]
+z_as_relative = false
+y_sort_enabled = true
+
+[node name="Trash7" parent="director/objetos" unique_id=1614346785 instance=ExtResource("7_hsq6h")]
+position = Vector2(163, 141)
+
+[node name="Trash8" parent="director/objetos" unique_id=1138439424 instance=ExtResource("10_meiv8")]
+position = Vector2(86, 142)
+
+[node name="player" parent="director/objetos" unique_id=762978970 instance=ExtResource("3_ic470")]
+y_sort_enabled = true
+position = Vector2(245, 138)
+disable_mode = 2
+safe_margin = 0.001
+push_force = 100.0
+
+[node name="MesaYTest" parent="director/objetos" unique_id=35312434 instance=ExtResource("4_ygm18")]
+position = Vector2(27, 58)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="director/objetos" unique_id=474781805]
+disable_mode = 2
+gravity_scale = 0.0
+can_sleep = false
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="director/objetos/RigidBody2D" unique_id=1879671858]
+position = Vector2(128.25, 16)
+shape = SubResource("RectangleShape2D_spgdd")
+
+[node name="MesaYTest2" parent="director/objetos" unique_id=1302525130 instance=ExtResource("4_ygm18")]
+position = Vector2(27, 141)
+
+[node name="Trash" parent="director/objetos" unique_id=1132383746 instance=ExtResource("5_k30xk")]
+position = Vector2(121, 106)
+
+[node name="Trash2" parent="director/objetos" unique_id=1522033302 instance=ExtResource("5_k30xk")]
+position = Vector2(105, 106)
+
+[node name="Trash3" parent="director/objetos" unique_id=1590755859 instance=ExtResource("6_yqcqi")]
+position = Vector2(124, 154)
+
+[node name="Trash4" parent="director/objetos" unique_id=988692610 instance=ExtResource("7_hsq6h")]
+position = Vector2(96, 49)
+
+[node name="Trash6" parent="director/objetos" unique_id=1679443311 instance=ExtResource("10_meiv8")]
+position = Vector2(30, 94)
+
+[node name="Trash5" parent="director/objetos" unique_id=399571885 instance=ExtResource("5_k30xk")]
+position = Vector2(88, 106)
+
+[node name="Trash9" parent="director/objetos" unique_id=249984078 instance=ExtResource("8_1h0ju")]
+position = Vector2(192, 66)
+
+[connection signal="usar" from="director/objetos/player" to="director" method="_on_player_usar"]

@@ -27,6 +27,10 @@ window/size/viewport_height=160
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[gui]
+
+theme/custom_font="uid://bgdp1fsmfmug7"
+
 [input]
 
 cima={

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bcgaeqhxepx6f"]
+
+[ext_resource type="Texture2D" uid="uid://dtf4c6omvlm3n" path="res://sprites/objects/free-office-pixel-art/printer.png" id="1_5w2l1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qig4m"]
+size = Vector2(61, 11)
+
+[node name="Trash" type="RigidBody2D" unique_id=1132383746]
+z_as_relative = false
+y_sort_enabled = true
+gravity_scale = 0.0
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=447782815]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_qig4m")
+
+[node name="Printer" type="Sprite2D" parent="." unique_id=325682192]
+texture = ExtResource("1_5w2l1")

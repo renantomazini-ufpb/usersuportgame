@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bi3iuj0mw0rog"]
+
+[ext_resource type="Texture2D" uid="uid://cccoorpx5ilv7" path="res://sprites/objects/free-office-pixel-art/office-partitions-2.png" id="1_dbtu5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qig4m"]
+size = Vector2(3, 46)
+
+[node name="Trash" type="RigidBody2D" unique_id=1132383746]
+z_as_relative = false
+y_sort_enabled = true
+gravity_scale = 0.0
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=447782815]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-0.5, -5)
+shape = SubResource("RectangleShape2D_qig4m")
+
+[node name="OfficePartitions2" type="Sprite2D" parent="." unique_id=1989291890]
+texture = ExtResource("1_dbtu5")

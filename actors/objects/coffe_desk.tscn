@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c02nweatqsqml"]
+
+[ext_resource type="Texture2D" uid="uid://bft5fsr6p400r" path="res://sprites/objects/free-office-pixel-art/coffee-maker.png" id="1_jhaiv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qig4m"]
+size = Vector2(62, 9)
+
+[node name="Trash" type="RigidBody2D" unique_id=1132383746]
+z_as_relative = false
+y_sort_enabled = true
+gravity_scale = 0.0
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=447782815]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_qig4m")
+
+[node name="CoffeeMaker" type="Sprite2D" parent="." unique_id=950372617]
+texture = ExtResource("1_jhaiv")

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dp5in57mi80ab"]
+
+[ext_resource type="Texture2D" uid="uid://cbajyuhy8tc3y" path="res://sprites/objects/free-office-pixel-art/cabinet.png" id="1_jgst2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qig4m"]
+size = Vector2(24, 23)
+
+[node name="Trash" type="RigidBody2D" unique_id=1132383746]
+z_as_relative = false
+y_sort_enabled = true
+gravity_scale = 0.0
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=447782815]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-1, -3.5)
+shape = SubResource("RectangleShape2D_qig4m")
+
+[node name="Cabinet" type="Sprite2D" parent="." unique_id=1230179744]
+texture = ExtResource("1_jgst2")

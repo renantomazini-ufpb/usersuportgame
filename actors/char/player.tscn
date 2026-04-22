@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c0pl4gpby4huo" path="res://sprites/char/renan_jeans.png" id="2_1yqc4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8pr8q"]
-size = Vector2(17, 11)
+size = Vector2(17, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_esgq3"]
 atlas = ExtResource("2_1yqc4")
@@ -330,7 +330,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vet3"]
-size = Vector2(34, 22)
+size = Vector2(24, 24)
 
 [node name="player" type="CharacterBody2D" unique_id=152839208]
 z_as_relative = false
@@ -340,7 +340,7 @@ push_force = null
 
 [node name="shape_fisica" type="CollisionShape2D" parent="." unique_id=1929331638]
 process_mode = 3
-position = Vector2(-0.5, 5.5)
+position = Vector2(-0.5, 12)
 shape = SubResource("RectangleShape2D_8pr8q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2011303391]
@@ -352,7 +352,7 @@ animation = &"cima"
 [node name="shape_hitbox" type="CollisionShape2D" parent="Area2D" unique_id=1393773084]
 z_as_relative = false
 y_sort_enabled = true
-position = Vector2(0, -7)
+position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_1vet3")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

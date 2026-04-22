@@ -8,7 +8,7 @@ var terminado = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("computadores")
-	$Timer.wait_time = 5.0
+	$Timer.wait_time = 3.0
 	$ProgressBar.max_value = $Timer.wait_time
 	$ProgressBar.value = 0
 
@@ -17,7 +17,7 @@ func _ready():
 func _process(delta: float) -> void:
 	if not $Timer.is_stopped():
 		$ProgressBar.value = $Timer.wait_time - $Timer.time_left
-		print("Tempo restante: ", snapped($Timer.time_left, 0.1)) # vai atualizar o timeleft?
+		#print("Tempo restante: ", snapped($Timer.time_left, 0.1)) # vai atualizar o timeleft?
 
 
 func _on_area_entered(area: Area2D) -> void:

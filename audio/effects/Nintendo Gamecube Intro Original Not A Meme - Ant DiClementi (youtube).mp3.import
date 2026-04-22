@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dxvublpehe2m3"
+path="res://.godot/imported/Nintendo Gamecube Intro Original Not A Meme - Ant DiClementi (youtube).mp3-d2c3019b28a5409dbd62a8c9adf49b11.mp3str"
+
+[deps]
+
+source_file="res://audio/effects/Nintendo Gamecube Intro Original Not A Meme - Ant DiClementi (youtube).mp3"
+dest_files=["res://.godot/imported/Nintendo Gamecube Intro Original Not A Meme - Ant DiClementi (youtube).mp3-d2c3019b28a5409dbd62a8c9adf49b11.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

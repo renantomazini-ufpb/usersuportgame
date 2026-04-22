@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ciy1gwtxel2wb"
+path="res://.godot/imported/Printer sound effect - Syadda Channel (youtube).mp3-db13e3b7b7660beb9d6b10fb87bfd9d7.mp3str"
+
+[deps]
+
+source_file="res://audio/effects/Printer sound effect - Syadda Channel (youtube).mp3"
+dest_files=["res://.godot/imported/Printer sound effect - Syadda Channel (youtube).mp3-db13e3b7b7660beb9d6b10fb87bfd9d7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

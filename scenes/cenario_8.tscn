@@ -1,0 +1,142 @@
+[gd_scene format=4 uid="uid://qhwmuvwb0gry"]
+
+[ext_resource type="Texture2D" uid="uid://w4xs78fepqiu" path="res://sprites/objects/Little_Bits_Office_Floors.png" id="1_pvsa4"]
+[ext_resource type="Script" uid="uid://b582a140182ad" path="res://scripts/director.gd" id="2_qq6xo"]
+[ext_resource type="PackedScene" uid="uid://bd6dh2yjyyrvm" path="res://actors/char/player.tscn" id="3_qnva0"]
+[ext_resource type="PackedScene" uid="uid://cylllkm6tnjjq" path="res://actors/objects/mesa_y_test.tscn" id="4_50yma"]
+[ext_resource type="PackedScene" uid="uid://dp5in57mi80ab" path="res://actors/objects/armarim.tscn" id="5_vncq0"]
+[ext_resource type="PackedScene" uid="uid://c02nweatqsqml" path="res://actors/objects/coffe_desk.tscn" id="6_nfela"]
+[ext_resource type="PackedScene" uid="uid://cv8t2gi5poupp" path="res://actors/objects/plant.tscn" id="7_m7a6r"]
+[ext_resource type="PackedScene" uid="uid://bmyxjq2rd04wd" path="res://actors/objects/trash.tscn" id="8_ud3rk"]
+[ext_resource type="PackedScene" uid="uid://bi3iuj0mw0rog" path="res://actors/objects/parede2.tscn" id="9_2rtcg"]
+[ext_resource type="PackedScene" uid="uid://yst3ngcciq8g" path="res://actors/objects/parede.tscn" id="10_1kcqu"]
+[ext_resource type="PackedScene" uid="uid://bcgaeqhxepx6f" path="res://actors/objects/impressora.tscn" id="11_s4xep"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_if0g2"]
+texture = ExtResource("1_pvsa4")
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tvifx"]
+sources/0 = SubResource("TileSetAtlasSource_if0g2")
+
+[node name="cenario_1" type="Node2D" unique_id=745251647]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=822496643]
+tile_map_data = PackedByteArray("AAAAAAcAAAAFAAAAAAAAAAgAAAAFAAEAAAAAAAkAAAAFAAIAAAABAAcAAAAGAAAAAAABAAgAAAAGAAEAAAABAAkAAAAGAAIAAAACAAcAAAAFAAAAAAACAAgAAAAFAAEAAAACAAkAAAAFAAIAAAADAAcAAAAGAAAAAAADAAgAAAAGAAEAAAADAAkAAAAGAAIAAAAEAAcAAAAFAAAAAAAEAAgAAAAFAAEAAAAEAAkAAAAFAAIAAAAFAAcAAAAGAAAAAAAFAAgAAAAGAAEAAAAFAAkAAAAGAAIAAAAGAAcAAAAFAAAAAAAGAAgAAAAFAAEAAAAGAAkAAAAFAAIAAAAHAAcAAAAGAAAAAAAHAAgAAAAGAAEAAAAHAAkAAAAGAAIAAAAIAAcAAAAFAAAAAAAIAAgAAAAFAAEAAAAIAAkAAAAFAAIAAAAJAAcAAAAGAAAAAAAJAAgAAAAGAAEAAAAJAAkAAAAGAAIAAAAKAAcAAAAFAAAAAAAKAAgAAAAFAAEAAAAKAAkAAAAFAAIAAAALAAcAAAAGAAAAAAALAAgAAAAGAAEAAAALAAkAAAAGAAIAAAAMAAcAAAAFAAAAAAAMAAgAAAAFAAEAAAAMAAkAAAAFAAIAAAANAAcAAAAGAAAAAAANAAgAAAAGAAEAAAANAAkAAAAGAAIAAAAOAAcAAAAFAAAAAAAOAAgAAAAFAAEAAAAOAAkAAAAFAAIAAAAPAAcAAAAGAAAAAAAPAAgAAAAGAAEAAAAPAAkAAAAGAAIAAAAOAAQAAAAFAAAAAAAOAAUAAAAFAAEAAAAOAAYAAAAFAAIAAAAPAAQAAAAGAAAAAAAPAAUAAAAGAAEAAAAPAAYAAAAGAAIAAAAOAAEAAAAFAAEAAAAOAAIAAAAFAAIAAAAPAAEAAAAGAAEAAAAPAAIAAAAGAAIAAAAMAAEAAAAFAAEAAAAMAAIAAAAFAAIAAAANAAEAAAAGAAEAAAANAAIAAAAGAAIAAAAKAAEAAAAFAAEAAAAKAAIAAAAFAAIAAAALAAEAAAAGAAEAAAALAAIAAAAGAAIAAAAIAAEAAAAFAAEAAAAIAAIAAAAFAAIAAAAJAAEAAAAGAAEAAAAJAAIAAAAGAAIAAAAGAAEAAAAFAAEAAAAGAAIAAAAFAAIAAAAHAAEAAAAGAAEAAAAHAAIAAAAGAAIAAAAEAAEAAAAFAAEAAAAEAAIAAAAFAAIAAAAFAAEAAAAGAAEAAAAFAAIAAAAGAAIAAAACAAEAAAAFAAEAAAACAAIAAAAFAAIAAAADAAEAAAAGAAEAAAADAAIAAAAGAAIAAAAAAAEAAAAFAAEAAAAAAAIAAAAFAAIAAAABAAEAAAAGAAEAAAABAAIAAAAGAAIAAAAAAAQAAAAFAAAAAAAAAAUAAAAFAAEAAAAAAAYAAAAFAAIAAAABAAQAAAAGAAAAAAABAAUAAAAGAAEAAAABAAYAAAAGAAIAAAACAAQAAAAFAAAAAAACAAUAAAAFAAEAAAACAAYAAAAFAAIAAAADAAQAAAAGAAAAAAADAAUAAAAGAAEAAAADAAYAAAAGAAIAAAAEAAQAAAAFAAAAAAAEAAUAAAAFAAEAAAAEAAYAAAAFAAIAAAAFAAQAAAAGAAAAAAAFAAUAAAAGAAEAAAAFAAYAAAAGAAIAAAAGAAQAAAAFAAAAAAAGAAUAAAAFAAEAAAAGAAYAAAAFAAIAAAAHAAQAAAAGAAAAAAAHAAUAAAAGAAEAAAAHAAYAAAAGAAIAAAAIAAQAAAAFAAAAAAAIAAUAAAAFAAEAAAAIAAYAAAAFAAIAAAAJAAQAAAAGAAAAAAAJAAUAAAAGAAEAAAAJAAYAAAAGAAIAAAAKAAQAAAAFAAAAAAAKAAUAAAAFAAEAAAAKAAYAAAAFAAIAAAALAAQAAAAGAAAAAAALAAUAAAAGAAEAAAALAAYAAAAGAAIAAAAMAAQAAAAFAAAAAAAMAAUAAAAFAAEAAAAMAAYAAAAFAAIAAAANAAQAAAAGAAAAAAANAAUAAAAGAAEAAAANAAYAAAAGAAIAAAAOAAAAAAAFAAAAAAAPAAAAAAAGAAAAAAAMAAAAAAAFAAAAAAANAAAAAAAGAAAAAAAKAAAAAAAFAAAAAAALAAAAAAAGAAAAAAAIAAAAAAAFAAAAAAAJAAAAAAAGAAAAAAAGAAAAAAAFAAAAAAAHAAAAAAAGAAAAAAAEAAAAAAAFAAAAAAAFAAAAAAAGAAAAAAACAAAAAAAFAAAAAAADAAAAAAAGAAAAAAAAAAAAAAAFAAAAAAABAAAAAAAGAAAAAAAAAAMAAAAFAAIAAAABAAMAAAAGAAIAAAACAAMAAAAFAAIAAAADAAMAAAAGAAIAAAAEAAMAAAAFAAIAAAAFAAMAAAAGAAIAAAAGAAMAAAAFAAIAAAAHAAMAAAAGAAIAAAAIAAMAAAAFAAIAAAAJAAMAAAAGAAIAAAAKAAMAAAAFAAIAAAALAAMAAAAGAAIAAAAMAAMAAAAFAAIAAAANAAMAAAAGAAIAAAAOAAMAAAAFAAIAAAAPAAMAAAAGAAIAAAA=")
+tile_set = SubResource("TileSet_tvifx")
+
+[node name="director" type="Node" parent="." unique_id=1997486403]
+script = ExtResource("2_qq6xo")
+
+[node name="objetos" type="Node2D" parent="director" unique_id=1359082291]
+z_as_relative = false
+y_sort_enabled = true
+
+[node name="player" parent="director/objetos" unique_id=762978970 instance=ExtResource("3_qnva0")]
+y_sort_enabled = true
+position = Vector2(245, 138)
+disable_mode = 2
+safe_margin = 0.001
+push_force = 100.0
+
+[node name="MesaYTest" parent="director/objetos" unique_id=35312434 instance=ExtResource("4_50yma")]
+position = Vector2(20, 25)
+
+[node name="Trash" parent="director/objetos" unique_id=1132383746 instance=ExtResource("5_vncq0")]
+position = Vector2(218, 119)
+
+[node name="Trash2" parent="director/objetos" unique_id=694075779 instance=ExtResource("5_vncq0")]
+position = Vector2(218, 101)
+
+[node name="Trash3" parent="director/objetos" unique_id=171807285 instance=ExtResource("5_vncq0")]
+position = Vector2(218, 137)
+
+[node name="Trash18" parent="director/objetos" unique_id=1799155649 instance=ExtResource("5_vncq0")]
+position = Vector2(218, 159)
+
+[node name="Trash19" parent="director/objetos" unique_id=1299761335 instance=ExtResource("5_vncq0")]
+position = Vector2(218, 180)
+
+[node name="Trash4" parent="director/objetos" unique_id=689922274 instance=ExtResource("6_nfela")]
+position = Vector2(225, 29)
+
+[node name="MesaYTest2" parent="director/objetos" unique_id=236946445 instance=ExtResource("4_50yma")]
+position = Vector2(181, 84)
+
+[node name="Trash5" parent="director/objetos" unique_id=782708699 instance=ExtResource("5_vncq0")]
+position = Vector2(109, 77)
+
+[node name="Trash6" parent="director/objetos" unique_id=1951598529 instance=ExtResource("5_vncq0")]
+position = Vector2(135, 77)
+
+[node name="Trash7" parent="director/objetos" unique_id=647787665 instance=ExtResource("7_m7a6r")]
+position = Vector2(199, 154)
+
+[node name="Trash8" parent="director/objetos" unique_id=967127598 instance=ExtResource("7_m7a6r")]
+position = Vector2(99, 141)
+
+[node name="Trash9" parent="director/objetos" unique_id=600801840 instance=ExtResource("8_ud3rk")]
+position = Vector2(120, 103)
+
+[node name="MesaYTest3" parent="director/objetos" unique_id=1493092377 instance=ExtResource("4_50yma")]
+position = Vector2(37, 152)
+
+[node name="Trash10" parent="director/objetos" unique_id=345077176 instance=ExtResource("9_2rtcg")]
+position = Vector2(55, 27)
+
+[node name="parede" parent="director/objetos" unique_id=591936836 instance=ExtResource("10_1kcqu")]
+position = Vector2(130, 71)
+
+[node name="MesaYTest4" parent="director/objetos" unique_id=933199099 instance=ExtResource("4_50yma")]
+position = Vector2(147, 13)
+
+[node name="Trash11" parent="director/objetos" unique_id=1312659191 instance=ExtResource("7_m7a6r")]
+position = Vector2(64, 56)
+
+[node name="Trash12" parent="director/objetos" unique_id=2074447107 instance=ExtResource("7_m7a6r")]
+position = Vector2(46, 56)
+
+[node name="Trash13" parent="director/objetos" unique_id=2112173638 instance=ExtResource("8_ud3rk")]
+position = Vector2(35, 54)
+
+[node name="Trash14" parent="director/objetos" unique_id=983417826 instance=ExtResource("8_ud3rk")]
+position = Vector2(152, 79)
+
+[node name="Trash15" parent="director/objetos" unique_id=195273017 instance=ExtResource("5_vncq0")]
+position = Vector2(69, 9)
+
+[node name="Trash16" parent="director/objetos" unique_id=1914307897 instance=ExtResource("5_vncq0")]
+position = Vector2(218, 82)
+
+[node name="Trash17" parent="director/objetos" unique_id=1322951220 instance=ExtResource("11_s4xep")]
+position = Vector2(31, 96)
+
+[connection signal="usar" from="director/objetos/player" to="director" method="_on_player_usar"]

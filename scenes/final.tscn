@@ -1,0 +1,149 @@
+[gd_scene format=4 uid="uid://bqdj3oj526ey6"]
+
+[ext_resource type="Script" uid="uid://bkb3noc5unp3l" path="res://scenes/final.gd" id="1_2ksrq"]
+[ext_resource type="Texture2D" uid="uid://c0pl4gpby4huo" path="res://sprites/char/renan_jeans.png" id="2_3hs2o"]
+[ext_resource type="Texture2D" uid="uid://w4xs78fepqiu" path="res://sprites/objects/Little_Bits_Office_Floors.png" id="3_dqvmu"]
+[ext_resource type="Texture2D" uid="uid://e3wx105v61w2" path="res://sprites/objects/free-office-pixel-art/desk-with-pc.png" id="4_xxe6l"]
+[ext_resource type="Texture2D" uid="uid://dtf4c6omvlm3n" path="res://sprites/objects/free-office-pixel-art/printer.png" id="5_vf3a0"]
+[ext_resource type="Texture2D" uid="uid://bft5fsr6p400r" path="res://sprites/objects/free-office-pixel-art/coffee-maker.png" id="6_30t23"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b1qv"]
+atlas = ExtResource("2_3hs2o")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rxmq"]
+atlas = ExtResource("2_3hs2o")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b7v6"]
+atlas = ExtResource("2_3hs2o")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msjty"]
+atlas = ExtResource("2_3hs2o")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1wbyy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6b1qv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rxmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6b7v6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msjty")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_32mrs"]
+texture = ExtResource("3_dqvmu")
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_po02c"]
+sources/0 = SubResource("TileSetAtlasSource_32mrs")
+
+[sub_resource type="Theme" id="Theme_ju3dn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j13vg"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ksrq"]
+bg_color = Color(0, 0.07450981, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3a8fg"]
+bg_color = Color(0.32746595, 7.3664116e-05, 0.32818848, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3hs2o"]
+bg_color = Color(0, 0.07450981, 0, 1)
+
+[node name="Final" type="Node2D" unique_id=2074114178]
+script = ExtResource("1_2ksrq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1463577187]
+z_index = 1
+position = Vector2(226, 105)
+sprite_frames = SubResource("SpriteFrames_1wbyy")
+autoplay = "default"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=442286461]
+tile_map_data = PackedByteArray("AAABAAgAAAAGAAEAAAAAAAgAAAAFAAEAAAAAAAkAAAAFAAIAAAABAAkAAAAGAAIAAAACAAgAAAAFAAEAAAADAAgAAAAGAAEAAAACAAkAAAAFAAIAAAADAAkAAAAGAAIAAAAEAAgAAAAFAAEAAAAFAAgAAAAGAAEAAAAEAAkAAAAFAAIAAAAFAAkAAAAGAAIAAAAGAAgAAAAFAAEAAAAHAAgAAAAGAAEAAAAGAAkAAAAFAAIAAAAHAAkAAAAGAAIAAAAIAAgAAAAFAAEAAAAJAAgAAAAGAAEAAAAIAAkAAAAFAAIAAAAJAAkAAAAGAAIAAAAKAAgAAAAFAAEAAAALAAgAAAAGAAEAAAAKAAkAAAAFAAIAAAALAAkAAAAGAAIAAAAMAAgAAAAFAAEAAAANAAgAAAAGAAEAAAAMAAkAAAAFAAIAAAANAAkAAAAGAAIAAAAOAAgAAAAFAAEAAAAPAAgAAAAGAAEAAAAOAAkAAAAFAAIAAAAPAAkAAAAGAAIAAAAAAAAAAAAKAAAAAAAAAAEAAAAKAAAAAAAAAAIAAAAKAAAAAAAAAAMAAAAKAAAAAAAAAAQAAAAKAAAAAAAAAAUAAAAKAAAAAAAAAAYAAAAKAAAAAAAAAAcAAAAFAAAAAAABAAAAAAAKAAAAAAABAAEAAAAKAAAAAAABAAIAAAAKAAAAAAABAAMAAAAKAAAAAAABAAQAAAAKAAAAAAABAAUAAAAKAAAAAAABAAYAAAAKAAAAAAABAAcAAAAGAAAAAAACAAAAAAAKAAAAAAACAAEAAAAKAAAAAAACAAIAAAAKAAAAAAACAAMAAAAKAAAAAAACAAQAAAAKAAAAAAACAAUAAAAKAAAAAAACAAYAAAAKAAAAAAACAAcAAAAFAAAAAAADAAAAAAAKAAAAAAADAAEAAAAKAAAAAAADAAIAAAAKAAAAAAADAAMAAAAKAAAAAAADAAQAAAAKAAAAAAADAAUAAAAKAAAAAAADAAYAAAAKAAAAAAADAAcAAAAGAAAAAAAEAAAAAAAKAAAAAAAEAAEAAAAKAAAAAAAEAAIAAAAKAAAAAAAEAAMAAAAKAAAAAAAEAAQAAAAKAAAAAAAEAAUAAAAKAAAAAAAEAAYAAAAKAAAAAAAEAAcAAAAFAAAAAAAFAAAAAAAKAAAAAAAFAAEAAAAKAAAAAAAFAAIAAAAKAAAAAAAFAAMAAAAKAAAAAAAFAAQAAAAKAAAAAAAFAAUAAAAKAAAAAAAFAAYAAAAKAAAAAAAFAAcAAAAGAAAAAAAGAAAAAAAKAAAAAAAGAAEAAAAKAAAAAAAGAAIAAAAKAAAAAAAGAAMAAAAKAAAAAAAGAAQAAAAKAAAAAAAGAAUAAAAKAAAAAAAGAAYAAAAKAAAAAAAGAAcAAAAFAAAAAAAHAAAAAAAKAAAAAAAHAAEAAAAKAAAAAAAHAAIAAAAKAAAAAAAHAAMAAAAKAAAAAAAHAAQAAAAKAAAAAAAHAAUAAAAKAAAAAAAIAAAAAAAKAAAAAAAIAAEAAAAKAAAAAAAIAAIAAAAKAAAAAAAIAAMAAAAKAAAAAAAIAAQAAAAKAAAAAAAIAAUAAAAKAAAAAAAJAAAAAAAKAAAAAAAJAAEAAAAKAAAAAAAJAAIAAAAKAAAAAAAJAAMAAAAKAAAAAAAJAAQAAAAKAAAAAAAJAAUAAAAKAAAAAAAJAAYAAAAKAAAAAAAJAAcAAAAGAAAAAAAKAAAAAAAKAAAAAAAKAAEAAAAKAAAAAAAKAAIAAAAKAAAAAAAKAAMAAAAKAAAAAAAKAAQAAAAKAAAAAAAKAAUAAAAKAAAAAAAKAAYAAAAKAAAAAAAKAAcAAAAFAAAAAAALAAAAAAAKAAAAAAALAAEAAAAKAAAAAAALAAIAAAAKAAAAAAALAAMAAAAKAAAAAAALAAQAAAAKAAAAAAALAAUAAAAKAAAAAAALAAYAAAAKAAAAAAALAAcAAAAGAAAAAAAMAAAAAAAKAAAAAAAMAAEAAAAKAAAAAAAMAAIAAAAKAAAAAAAMAAMAAAAKAAAAAAAMAAQAAAAKAAAAAAAMAAUAAAAKAAAAAAAMAAYAAAAKAAAAAAAMAAcAAAAFAAAAAAANAAAAAAAKAAAAAAANAAEAAAAKAAAAAAANAAIAAAAKAAAAAAANAAMAAAAKAAAAAAANAAQAAAAKAAAAAAANAAUAAAAKAAAAAAANAAYAAAAKAAAAAAANAAcAAAAGAAAAAAAOAAAAAAAKAAAAAAAOAAEAAAAKAAAAAAAOAAIAAAAKAAAAAAAOAAMAAAAKAAAAAAAOAAQAAAAKAAAAAAAOAAUAAAAKAAAAAAAOAAYAAAAKAAAAAAAOAAcAAAAFAAAAAAAPAAAAAAAKAAAAAAAPAAEAAAAKAAAAAAAPAAIAAAAKAAAAAAAPAAMAAAAKAAAAAAAPAAQAAAAKAAAAAAAPAAUAAAAKAAAAAAAPAAYAAAAKAAAAAAAPAAcAAAAGAAAAAAAHAAYAAAAKAAAAAAAHAAcAAAAGAAAAAAAIAAYAAAAKAAAAAAAIAAcAAAAFAAAAAAA=")
+tile_set = SubResource("TileSet_po02c")
+
+[node name="Button_PLAY" type="Button" parent="." unique_id=355364569]
+offset_left = 56.0
+offset_top = 8.0
+offset_right = 200.0
+offset_bottom = 41.0
+theme = SubResource("Theme_ju3dn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j13vg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2ksrq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3a8fg")
+text = "Tentar de novo"
+
+[node name="Button_time" type="Button" parent="." unique_id=1982362584]
+offset_left = 72.0
+offset_top = 48.0
+offset_right = 184.0
+offset_bottom = 81.0
+theme = SubResource("Theme_ju3dn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j13vg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3hs2o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3a8fg")
+text = "00:00"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=588539571]
+position = Vector2(192, 104)
+texture = ExtResource("4_xxe6l")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=309585769]
+position = Vector2(128, 104)
+texture = ExtResource("5_vf3a0")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1109347235]
+position = Vector2(32, 104)
+texture = ExtResource("6_30t23")
+
+[node name="Label" type="Label" parent="." unique_id=864880984]
+offset_left = 64.0
+offset_top = 128.0
+offset_right = 194.0
+offset_bottom = 144.0
+text = "Suporte CompeTItivo"
+
+[connection signal="pressed" from="Button_PLAY" to="." method="_on_button_play_pressed"]
