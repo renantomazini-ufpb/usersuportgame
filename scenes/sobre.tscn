@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c0pl4gpby4huo" path="res://sprites/char/renan_jeans.png" id="1_ca5xl"]
 [ext_resource type="Texture2D" uid="uid://w4xs78fepqiu" path="res://sprites/objects/Little_Bits_Office_Floors.png" id="2_ua61o"]
 [ext_resource type="Texture2D" uid="uid://e3wx105v61w2" path="res://sprites/objects/free-office-pixel-art/desk-with-pc.png" id="3_1nksm"]
+[ext_resource type="AudioStream" uid="uid://ccj1xth3g3cru" path="res://audio/effects/Office Ambience Sound Effect - No Copyright - Sound King (youtube).mp3" id="5_ca5xl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qph4u"]
 atlas = ExtResource("1_ca5xl")
@@ -128,5 +129,9 @@ Ande com WASD, interaja com E.
 
 Tente conseguir o menor tempo!"
 autowrap_mode = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1595796104]
+stream = ExtResource("5_ca5xl")
+autoplay = true
 
 [connection signal="pressed" from="Button_SAIR" to="." method="_on_button_sair_pressed"]

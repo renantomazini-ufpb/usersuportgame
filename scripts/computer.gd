@@ -4,6 +4,7 @@ extends Area2D
 signal pronto
 var player_na_area = false
 var terminado = false
+#sei que o nome tá errado, xiu
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,16 +39,19 @@ func _on_area_exited(area: Area2D) -> void:
 		$Timer.stop()
 		$Timer.set_wait_time(5.0)
 	$ProgressBar.set_visible(false)
+	
 
 func _on_timer_timeout():
+	$sons/AudioStreamPlayer2D2.stop()
 	terminado = true
 	emit_signal("pronto")
 
 
 		
 func usando():
-	print("teste importante")
 	if player_na_area and !terminado:
 		print("teste passado!")
+		$sons/AudioStreamPlayer2D.play()
+		$sons/AudioStreamPlayer2D2.play()
 		$ProgressBar.set_visible(true)
 		$Timer.start()

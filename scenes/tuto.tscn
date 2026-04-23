@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bmyxjq2rd04wd" path="res://actors/objects/trash.tscn" id="8_7a5hc"]
 [ext_resource type="PackedScene" uid="uid://v07gqmhijmh5" path="res://actors/objects/water_cooler.tscn" id="9_e7r5x"]
 [ext_resource type="PackedScene" uid="uid://dp5in57mi80ab" path="res://actors/objects/armarim.tscn" id="10_se0d8"]
+[ext_resource type="AudioStream" uid="uid://ccj1xth3g3cru" path="res://audio/effects/Office Ambience Sound Effect - No Copyright - Sound King (youtube).mp3" id="11_bvb2u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_if0g2"]
 texture = ExtResource("1_561sr")
@@ -123,5 +124,10 @@ offset_bottom = 71.0
 text = "Teclas para andar:"
 horizontal_alignment = 1
 uppercase = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2068208521]
+stream = ExtResource("11_bvb2u")
+volume_db = -4.608
+autoplay = true
 
 [connection signal="usar" from="director/objetos/player" to="director" method="_on_player_usar"]

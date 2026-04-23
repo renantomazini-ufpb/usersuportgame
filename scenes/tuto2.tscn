@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bxx1nqse7fl5n" path="res://scenes/director_tuto2.gd" id="2_bd1n0"]
 [ext_resource type="PackedScene" uid="uid://bd6dh2yjyyrvm" path="res://actors/char/player.tscn" id="3_wtcat"]
 [ext_resource type="PackedScene" uid="uid://cylllkm6tnjjq" path="res://actors/objects/mesa_y_test.tscn" id="4_4djcb"]
+[ext_resource type="AudioStream" uid="uid://ccj1xth3g3cru" path="res://audio/effects/Office Ambience Sound Effect - No Copyright - Sound King (youtube).mp3" id="7_7shr1"]
 [ext_resource type="PackedScene" uid="uid://v07gqmhijmh5" path="res://actors/objects/water_cooler.tscn" id="9_alm6o"]
 [ext_resource type="PackedScene" uid="uid://dp5in57mi80ab" path="res://actors/objects/armarim.tscn" id="10_7t40r"]
 
@@ -84,5 +85,10 @@ Comece consertando esse ->"
 autowrap_mode = 2
 autowrap_trim_flags = 0
 uppercase = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1392103095]
+stream = ExtResource("7_7shr1")
+volume_db = -7.899
+autoplay = true
 
 [connection signal="usar" from="director/objetos/player" to="director" method="_on_player_usar"]

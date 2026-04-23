@@ -27,7 +27,7 @@ func _on_computador_pronto():
 	if com_pro == num_comp:
 		ganhou = true
 		ganhar.emit()
-		get_tree().change_scene_to_file("res://scenes/principal.tscn")
+		get_tree().change_scene_to_file("res://scenes/tuto2.tscn")
 		# trocar para tela de ganho e ir para próxima
 
 	

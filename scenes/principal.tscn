@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c4xrm4sviwcum"]
 
 [ext_resource type="Script" uid="uid://c8d45i1olbpsg" path="res://scenes/principal.gd" id="1_1k33c"]
+[ext_resource type="AudioStream" uid="uid://ccj1xth3g3cru" path="res://audio/effects/Office Ambience Sound Effect - No Copyright - Sound King (youtube).mp3" id="2_6f3be"]
 
 [node name="Principal" type="Node2D" unique_id=1031744802]
 script = ExtResource("1_1k33c")
@@ -14,3 +15,8 @@ text = "00:00"
 horizontal_alignment = 1
 
 [node name="FaseContainer" type="Node" parent="." unique_id=2091798690]
+
+[node name="OfficeAmbienceSoundEffectNoCopyrightSoundKing(youtube)" type="AudioStreamPlayer" parent="." unique_id=351261782]
+stream = ExtResource("2_6f3be")
+volume_db = -8.194
+autoplay = true

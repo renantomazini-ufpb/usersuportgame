@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://e3wx105v61w2" path="res://sprites/objects/free-office-pixel-art/desk-with-pc.png" id="4_xxe6l"]
 [ext_resource type="Texture2D" uid="uid://dtf4c6omvlm3n" path="res://sprites/objects/free-office-pixel-art/printer.png" id="5_vf3a0"]
 [ext_resource type="Texture2D" uid="uid://bft5fsr6p400r" path="res://sprites/objects/free-office-pixel-art/coffee-maker.png" id="6_30t23"]
+[ext_resource type="AudioStream" uid="uid://bgecgakg0x3bp" path="res://audio/Music/02_ONE_SHOT_FANFARRE.ogg" id="7_3hs2o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6b1qv"]
 atlas = ExtResource("2_3hs2o")
@@ -139,6 +140,17 @@ texture = ExtResource("5_vf3a0")
 position = Vector2(32, 104)
 texture = ExtResource("6_30t23")
 
+[node name="Gerar" type="Button" parent="." unique_id=86813647]
+offset_left = 64.0
+offset_top = 88.0
+offset_right = 192.0
+offset_bottom = 121.0
+theme = SubResource("Theme_ju3dn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j13vg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3hs2o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3a8fg")
+text = "Gerar Certificado"
+
 [node name="Label" type="Label" parent="." unique_id=864880984]
 offset_left = 64.0
 offset_top = 128.0
@@ -146,4 +158,10 @@ offset_right = 194.0
 offset_bottom = 144.0
 text = "Suporte CompeTItivo"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=925048819]
+stream = ExtResource("7_3hs2o")
+autoplay = true
+
 [connection signal="pressed" from="Button_PLAY" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="Button_time" to="." method="_on_gerar_pressed"]
+[connection signal="pressed" from="Gerar" to="." method="_on_gerar_pressed"]

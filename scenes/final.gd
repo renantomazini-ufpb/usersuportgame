@@ -14,3 +14,9 @@ func _process(delta: float) -> void:
 
 func _on_button_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/Inicial.tscn")
+
+
+func _on_gerar_pressed() -> void:
+	var link = "https://renantomazini-ufpb.github.io/certificadorIFSG/?tempo=" + str(tempo_recebido)
+	OS.shell_open(link)
+	pass # Replace with function body.
