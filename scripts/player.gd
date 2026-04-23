@@ -59,6 +59,6 @@ func _physics_process(delta: float) -> void: #  Usamos physics_process para fís
 	
 func teste_usar():
 	if Input.is_action_just_pressed("usar"):
-		print("usando")
+		#print("usando")
 		emit_signal("usar")
 		

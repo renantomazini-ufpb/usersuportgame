@@ -41,8 +41,9 @@ func _on_ganhar():
 		$FaseContainer.add_child(nova_cena)
 		return
 	var caminho = "res://scenes/cenario_" + str(fase) + ".tscn"
-	if FileAccess.file_exists(caminho):
-		var nova_cena = load(caminho).instantiate()
+	var cena_recurso = load(caminho)
+	if cena_recurso:
+		var nova_cena = cena_recurso.instantiate()
 		#get_tree().change_scene_to_file(caminho)
 		$FaseContainer.add_child(nova_cena)
 		var novo_director = nova_cena.get_node("director")
@@ -50,4 +51,5 @@ func _on_ganhar():
 		ganhou = false
 		set_process(true)
 	else:
-		print("Sem novas fases")
+		pass
+		print("Erro! Sem caminho de fase")

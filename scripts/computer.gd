@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
-	print("Entrou " + String(self.name))
+	#print("Entrou " + String(self.name))
 	$Pc1.visible = true
 	$Pc2.visible = false
 	player_na_area = true
@@ -30,7 +30,7 @@ func _on_area_entered(area: Area2D) -> void:
 
 
 func _on_area_exited(area: Area2D) -> void:
-	print("Saiu") # Replace with function body.
+	#print("Saiu") # Replace with function body.
 	if !terminado:
 		player_na_area = false
 		$Pc1.visible = false
@@ -50,7 +50,7 @@ func _on_timer_timeout():
 		
 func usando():
 	if player_na_area and !terminado:
-		print("teste passado!")
+		#print("teste passado!")
 		$sons/AudioStreamPlayer2D.play()
 		$sons/AudioStreamPlayer2D2.play()
 		$ProgressBar.set_visible(true)
