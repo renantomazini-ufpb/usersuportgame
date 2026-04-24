@@ -5,7 +5,7 @@ var screen_size
 signal pontua
 signal usar
 var ultima_direcao = 'cima'
-@export var push_force = 100.0 # Força para empurrar
+@export var push_force = 100.0 # Força para empurrar, acho que não usei
 
 func _ready() -> void:
 	$AnimatedSprite2D.animation = "parado_cima"
@@ -29,7 +29,6 @@ func _physics_process(delta: float) -> void: #  Usamos physics_process para fís
 		$AnimatedSprite2D.play()
 	else:
 		velocity = Vector2.ZERO # Para o player se não houver input
-		# ... (sua lógica de animação parado continua igual)
 		if ultima_direcao == 'cima': $AnimatedSprite2D.animation = "parado_cima"
 		if ultima_direcao == 'baixo': $AnimatedSprite2D.animation = "parado_baixo"
 		if ultima_direcao == 'esquerda': $AnimatedSprite2D.animation = "parado_esquerda"
