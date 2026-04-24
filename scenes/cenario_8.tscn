@@ -47,6 +47,9 @@ texture = ExtResource("1_pvsa4")
 [sub_resource type="TileSet" id="TileSet_tvifx"]
 sources/0 = SubResource("TileSetAtlasSource_if0g2")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvsa4"]
+size = Vector2(26.75, 164)
+
 [node name="cenario_1" type="Node2D" unique_id=745251647]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=822496643]
@@ -138,5 +141,9 @@ position = Vector2(218, 82)
 
 [node name="Trash17" parent="director/objetos" unique_id=1322951220 instance=ExtResource("11_s4xep")]
 position = Vector2(31, 96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1944096574]
+position = Vector2(272, 76)
+shape = SubResource("RectangleShape2D_pvsa4")
 
 [connection signal="usar" from="director/objetos/player" to="director" method="_on_player_usar"]

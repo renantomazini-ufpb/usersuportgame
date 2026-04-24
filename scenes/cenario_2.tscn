@@ -45,6 +45,9 @@ sources/0 = SubResource("TileSetAtlasSource_if0g2")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spgdd"]
 size = Vector2(253.5, 48)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_potnx"]
+size = Vector2(26.75, 164)
+
 [node name="cenario_1" type="Node2D" unique_id=745251647]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=822496643]
@@ -86,5 +89,9 @@ position = Vector2(80, 96)
 
 [node name="MesaYTest2" parent="director/objetos" unique_id=857593896 instance=ExtResource("4_m43ms")]
 position = Vector2(24, 65)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="director/objetos/MesaYTest2" unique_id=1113225134]
+position = Vector2(247, 15)
+shape = SubResource("RectangleShape2D_potnx")
 
 [connection signal="usar" from="director/objetos/player" to="director" method="_on_player_usar"]

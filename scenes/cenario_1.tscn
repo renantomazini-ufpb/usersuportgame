@@ -58,7 +58,7 @@ y_sort_enabled = true
 
 [node name="player" parent="director/objetos" unique_id=762978970 instance=ExtResource("3_jivmu")]
 y_sort_enabled = true
-position = Vector2(245, 138)
+position = Vector2(240, 138)
 disable_mode = 2
 safe_margin = 0.001
 push_force = 100.0

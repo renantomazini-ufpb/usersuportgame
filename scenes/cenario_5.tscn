@@ -48,6 +48,9 @@ sources/0 = SubResource("TileSetAtlasSource_if0g2")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spgdd"]
 size = Vector2(253.5, 30)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nl7h8"]
+size = Vector2(26.75, 164)
+
 [node name="cenario_1" type="Node2D" unique_id=745251647]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=822496643]
@@ -110,5 +113,9 @@ position = Vector2(88, 106)
 
 [node name="Trash9" parent="director/objetos" unique_id=249984078 instance=ExtResource("8_1h0ju")]
 position = Vector2(192, 66)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1004118738]
+position = Vector2(271, 78)
+shape = SubResource("RectangleShape2D_nl7h8")
 
 [connection signal="usar" from="director/objetos/player" to="director" method="_on_player_usar"]

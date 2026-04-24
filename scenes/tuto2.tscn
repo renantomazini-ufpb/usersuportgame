@@ -43,6 +43,9 @@ texture = ExtResource("1_ao5j1")
 [sub_resource type="TileSet" id="TileSet_tvifx"]
 sources/0 = SubResource("TileSetAtlasSource_if0g2")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7shr1"]
+size = Vector2(26.75, 164)
+
 [node name="tutorial" type="Node2D" unique_id=745251647]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=822496643]
@@ -66,16 +69,16 @@ push_force = 100.0
 [node name="MesaYTest" parent="director/objetos" unique_id=35312434 instance=ExtResource("4_4djcb")]
 position = Vector2(86, 92)
 
-[node name="Trash" parent="." unique_id=434687147 instance=ExtResource("9_alm6o")]
+[node name="Trash" parent="director/objetos" unique_id=434687147 instance=ExtResource("9_alm6o")]
 position = Vector2(249, 72)
 
-[node name="Trash2" parent="." unique_id=442871641 instance=ExtResource("10_7t40r")]
+[node name="Trash2" parent="director/objetos" unique_id=442871641 instance=ExtResource("10_7t40r")]
 position = Vector2(245, 8)
 
-[node name="Trash3" parent="." unique_id=2128453655 instance=ExtResource("10_7t40r")]
+[node name="Trash3" parent="director/objetos" unique_id=2128453655 instance=ExtResource("10_7t40r")]
 position = Vector2(219, 8)
 
-[node name="Label2" type="Label" parent="." unique_id=2001818351]
+[node name="Label2" type="Label" parent="director/objetos" unique_id=2001818351]
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 174.0
@@ -90,5 +93,9 @@ uppercase = true
 stream = ExtResource("7_7shr1")
 volume_db = -7.899
 autoplay = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AudioStreamPlayer2D" unique_id=2032824639]
+position = Vector2(270, 82)
+shape = SubResource("RectangleShape2D_7shr1")
 
 [connection signal="usar" from="director/objetos/player" to="director" method="_on_player_usar"]
